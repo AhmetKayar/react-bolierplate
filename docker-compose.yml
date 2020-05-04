@@ -10,9 +10,7 @@ services:
         max_attempts: 3
         window: "30s"	
     ports: 	
-      - "8080"	
-    networks:	
-      - proxy	
+      - "8080"
     labels:	
       - "traefik.enable=true"
       - "traefik.http.routers.api-server.rule=Host(`react.turkiyeoku.com`)"
