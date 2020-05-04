@@ -2,7 +2,7 @@ version: '3'
 
 services:
   react-app:	
-    image: reactApp:latest	
+    image: reactapp:latest	
     deploy:
       restart_policy:
         condition: "any"
@@ -12,16 +12,13 @@ services:
     ports: 	
       - "8080"	
     networks:	
-      - web	
-      - default	
+      - proxy	
     labels:	
-      - "traefik.docker.network=web"	
-      - "traefik.enable=true"	
-      - "traefik.reactboilerplate.frontend.rule=Host:reactApp.yourdomain.com"
-      - "traefik.reactboilerplate.frontend.port=8080"
-      - "traefik.reactboilerplate.frontend.protocol=http"
+      - "traefik.enable=true"
+      - "traefik.http.routers.api-server.rule=Host(`react.turkiyeoku.com`)"
+      - "traefik.http.routers.api-server.entrypoints=https"
+      - "traefik.http.routers.api-server.tls.certresolver=http"
 
 networks:
-  web:
-    external: 
-      name: web
+  proxy:
+    external: true
