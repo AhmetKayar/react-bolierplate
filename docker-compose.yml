@@ -10,7 +10,7 @@ services:
         max_attempts: 3
         window: "30s"	
     ports: 	
-      - 8080:8080	
+      - 7070:7070	
     networks:	
       - proxy	
     labels:	
