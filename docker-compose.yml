@@ -1,19 +1,19 @@
 version: '3'
 
 services:
-  react-app:	
-    image: reactapp:latest	
+  react-app:
+    image: reactapp:latest
     deploy:
       restart_policy:
         condition: "any"
         delay: "0"
         max_attempts: 3
-        window: "30s"	
-    ports: 	
-      - 9010:8080
-    networks:	
-      - proxy	
-    labels:	
+        window: "30s"
+    ports:
+      - 9010:80
+    networks:
+      - proxy
+    labels:
       - "traefik.enable=true"
       - "traefik.http.routers.reactapp.rule=Host(`react.turkiyeoku.com`)"
       - "traefik.http.routers.reactapp.entrypoints=https"

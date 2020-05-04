@@ -16,7 +16,7 @@ RUN yarn install
 RUN yarn build
 
 #Expose ports
-EXPOSE 8080
+EXPOSE 80
 
 ENTRYPOINT ["yarn", "start"]
 

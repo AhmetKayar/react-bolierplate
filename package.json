@@ -8,7 +8,7 @@
   "private": false,
   "scripts": {
     "dev": "npx webpack-dev-server --open --colors --hot --mode development",
-    "start": "npx http-server ./lib",
+    "start": "npx http-server -p 80 ./lib",
     "build": "npm run test && npx webpack --mode production",
     "test": "npx jest --config=jest.config.json"
   },

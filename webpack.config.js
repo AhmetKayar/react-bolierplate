@@ -83,6 +83,7 @@ module.exports = (env, { mode = 'development' }) => {
     config.devServer = {
       contentBase: path.resolve(__dirname, 'lib/dist'),
       publicPath: '/',
+      port:80,
       stats: {
         colors: true,
         hash: false,
