@@ -18,6 +18,3 @@ services:
       - "traefik.http.routers.api-server.rule=Host(`react.turkiyeoku.com`)"
       - "traefik.http.routers.api-server.entrypoints=https"
       - "traefik.http.routers.api-server.tls.certresolver=http"
-networks:
-  proxy:
-    driver: overlay
